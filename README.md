@@ -860,56 +860,56 @@ Hide/Show table of contents
     };
     ```
 
-The properties from props object can be accessed directly using destructing feature from ES6 (ECMAScript 2015). It is also possible to fallback to default value when the prop value is not specified. The above child component can be simplified like below.
+    The properties from props object can be accessed directly using destructing feature from ES6 (ECMAScript 2015). It is also possible to fallback to default value when the prop value is not specified. The above child component can be simplified like below.
 
-```jsx harmony
-const ChildComponent = ({ name, age, gender = "male" }) => {
-  return (
-    <div>
-      <p>{name}</p>
-      <p>{age}</p>
-      <p>{gender}</p>
-    </div>
-  );
-};
-```
+    ```jsx harmony
+    const ChildComponent = ({ name, age, gender = "male" }) => {
+      return (
+        <div>
+          <p>{name}</p>
+          <p>{age}</p>
+          <p>{gender}</p>
+        </div>
+      );
+    };
+    ```
 
-**Note:** The default value won't be used if you pass `null` or `0` value. i.e, default value is only used if the prop value is missed or `undefined` value has been passed.
+    **Note:** The default value won't be used if you pass `null` or `0` value. i.e, default value is only used if the prop value is missed or `undefined` value has been passed.
 
-  <details><summary><b>See Class</b></summary>
-     The Props accessed in Class Based Component as below
+      <details><summary><b>See Class</b></summary>
+        The Props accessed in Class Based Component as below
 
-```jsx
-import React from "react";
-import ReactDOM from "react-dom";
+    ```jsx
+    import React from "react";
+    import ReactDOM from "react-dom";
 
-class ChildComponent extends React.Component {
-  render() {
-    return (
-      <div>
-        <p>{this.props.name}</p>
-        <p>{this.props.age}</p>
-        <p>{this.props.gender}</p>
-      </div>
-    );
-  }
-}
+    class ChildComponent extends React.Component {
+      render() {
+        return (
+          <div>
+            <p>{this.props.name}</p>
+            <p>{this.props.age}</p>
+            <p>{this.props.gender}</p>
+          </div>
+        );
+      }
+    }
 
-class ParentComponent extends React.Component {
-  render() {
-    return (
-      <div>
-        <ChildComponent name="John" age="30" gender="male" />
-        <ChildComponent name="Mary" age="25" gender="female" />
-      </div>
-    );
-  }
-}
-```
+    class ParentComponent extends React.Component {
+      render() {
+        return (
+          <div>
+            <ChildComponent name="John" age="30" gender="male" />
+            <ChildComponent name="Mary" age="25" gender="female" />
+          </div>
+        );
+      }
+    }
+    ```
 
-  </details>
+      </details>
 
-**[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
 
 11. ### What is the difference between state and props?
 
