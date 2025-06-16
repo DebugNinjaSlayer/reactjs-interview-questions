@@ -52,7 +52,7 @@ Hide/Show table of contents
 </summary>
 
 | No. | Questions                                                                                                                                                                                                                  |
-| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- | --- |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |     | **Core React**                                                                                                                                                                                                             |
 | 1   | [What is React?](#what-is-react)                                                                                                                                                                                           |
 | 2   | [What is the history behind React’s evolution?](#what-is-the-history-behind-react-evolution)                                                                                                                               |
@@ -120,7 +120,7 @@ Hide/Show table of contents
 | 64  | [How do you combine multiple inline style objects?](#how-to-combine-multiple-inline-style-objects)                                                                                                                         |
 | 65  | [How do you re-render the view when the browser is resized?](#how-to-re-render-the-view-when-the-browser-is-resized)                                                                                                       |
 | 66  | [How do you pretty-print JSON with React?](#how-to-pretty-print-json-with-react)                                                                                                                                           |
-| 67  | [Why can’t you update props in React?](#why-you-cant-update-props-in-react)                                                                                                                                                |
+| 67  | [Why can’t you update props in React?](#why-cant-you-update-props-in-react)                                                                                                                                                |
 | 68  | [How do you focus an input element on page load?](#how-to-focus-an-input-element-on-page-load)                                                                                                                             |
 | 69  | [How can you find the version of React at runtime in the browser?](#how-can-we-find-the-version-of-react-at-runtime-in-the-browser)                                                                                        |
 | 70  | [How do you add Google Analytics for React Router?](#how-to-add-google-analytics-for-react-router)                                                                                                                         |
@@ -250,12 +250,12 @@ Hide/Show table of contents
 | 187 | [How do you prevent a function from being called multiple times?](#how-to-prevent-a-function-from-being-called-multiple-times)                                                                                             |
 | 188 | [How does JSX prevent injection attacks?](#how-jsx-prevents-injection-attacks)                                                                                                                                             |
 | 189 | [How do you update rendered elements?](#how-do-you-update-rendered-elements)                                                                                                                                               |
-| 190 | [How do you indicate that props are read-only?](#how-do-you-say-that-props-are-read-only)                                                                                                                                  |
+| 190 | [How do you indicate that props are read-only?](#how-do-you-say-that-props-are-readonly)                                                                                                                                   |
 | 191 | [What are the conditions for safely using an index as a key?](#what-are-the-conditions-to-safely-use-the-index-as-a-key)                                                                                                   |
-| 192 | [Do keys need to be globally unique?](#is-it-keys-should-be-globally-unique)                                                                                                                                               |
+| 192 | [Do keys need to be globally unique?](#should-keys-be-globally-unique)                                                                                                                                                     |
 | 193 | [What is the popular choice for form handling?](#what-is-the-popular-choice-for-form-handling)                                                                                                                             |
 | 194 | [What are the advantages of Formik over the Redux Form library?](#what-are-the-advantages-of-formik-over-redux-form-library)                                                                                               |
-| 195 | [Why are you not required to use inheritance?](#why-do-you-not-required-to-use-inheritance)                                                                                                                                |
+| 195 | [Why are you not required to use inheritance?](#why-are-you-not-required-to-use-inheritance)                                                                                                                               |
 | 196 | [Can you use web components in a React application?](#can-i-use-web-components-in-react-application)                                                                                                                       |
 | 197 | [What is a dynamic import?](#what-is-dynamic-import)                                                                                                                                                                       |
 | 198 | [What are loadable components?](#what-are-loadable-components)                                                                                                                                                             |
@@ -265,7 +265,7 @@ Hide/Show table of contents
 | 202 | [What is the diffing algorithm?](#what-is-diffing-algorithm)                                                                                                                                                               |
 | 203 | [What rules are covered by the diffing algorithm?](#what-are-the-rules-covered-by-diffing-algorithm)                                                                                                                       |
 | 204 | [When do you need to use refs?](#when-do-you-need-to-use-refs)                                                                                                                                                             |
-| 205 | [Must a prop be named "render" for render props?](#is-it-prop-must-be-named-as-render-for-render-props)                                                                                                                    |
+| 205 | [Must a prop be named "render" for render props?](#must-prop-be-named-as-render-for-render-props)                                                                                                                          |
 | 206 | [What are the problems with using render props with Pure Components?](#what-are-the-problems-of-using-render-props-with-pure-components)                                                                                   |
 | 207 | [What is the windowing technique?](#what-is-windowing-technique)                                                                                                                                                           |
 | 208 | [How do you print falsy values in JSX?](#how-do-you-print-falsy-values-in-jsx)                                                                                                                                             |
@@ -317,7 +317,7 @@ Hide/Show table of contents
 | 254 | [Is it possible to prevent automatic batching?](#is-it-possible-to-prevent-automatic-batching)                                                                                                                             |
 | 255 | [What is React hydration?](#what-is-react-hydration)                                                                                                                                                                       |
 | 256 | [How do you update objects inside state?](#how-do-you-update-objects-inside-state)                                                                                                                                         |
-| 257 | [How do you update nested objects inside state?](#How-do-you-update-nested-objects-inside-state)                                                                                                                           |
+| 257 | [How do you update nested objects inside state?](#how-do-you-update-nested-objects-inside-state)                                                                                                                           |
 | 258 | [How do you update arrays inside state?](#how-do-you-update-arrays-inside-state)                                                                                                                                           |
 | 259 | [How do you use the Immer library for state updates?](#how-do-you-use-immer-library-for-state-updates)                                                                                                                     |
 | 260 | [What are the benefits of preventing direct state mutations?](#what-are-the-benefits-of-preventing-the-direct-state-mutations)                                                                                             |
@@ -326,13 +326,18 @@ Hide/Show table of contents
 | 263 | [Can I use keys for non-list items?](#can-i-use-keys-for-non-list-items)                                                                                                                                                   |
 | 264 | [What are the guidelines to follow for writing reducers?](#what-are-the-guidelines-to-be-followed-for-writing-reducers)                                                                                                    |
 |     | **Hooks**                                                                                                                                                                                                                  |
-| 265 | [What is useReducer hook? Can you describe its usage?](#what-is-use-reducer-hook-can-you-describe-its-usage)                                                                                                               |
-| 266 | [How do you compare useState and useReducer?](#how-do-you-compare-use-state-and-use-reducer)                                                                                                                               |
+| 265 | [What is useReducer hook? Can you describe its usage?](#what-is-usereducer-hook-can-you-describe-its-usage)                                                                                                                |
+| 266 | [How do you compare useState and useReducer?](#how-do-you-compare-usestate-and-usereducer)                                                                                                                                 |
 | 267 | [How does Context work with the useContext hook?](#how-does-context-works-using-usecontext-hook)                                                                                                                           |
 | 268 | [What are the use cases of the useContext hook?](#what-are-the-use-cases-of-usecontext-hook)                                                                                                                               |
 | 269 | [When should you use client and server components?](#when-to-use-client-and-server-components)                                                                                                                             |
-| 270 | [What are the differences between the Page Router and App Router in Next.js?](#what-are-the-differences-between-page-router-and-app-router-in-nextjs)                                                                      |     |     |
-|     |
+| 270 | [What are the differences between the Page Router and App Router in Next.js?](#what-are-the-differences-between-page-router-and-app-router-in-nextjs)                                                                      |
+| 271 | [Can you describe the useMemo() Hook?](#can-you-describe-the-usememo-hook)                                                                                                                                                 |
+| 272 | [Can Hooks be used in class components?](#can-hooks-be-used-in-class-components)                                                                                                                                           |
+| 273 | [What is an updater function? Should an updater function be used in all cases?](#what-is-an-updater-function-should-an-updater-function-be-used-in-all-cases)                                                              |
+| 274 | [Can useState take a function as an initial value?](#can-usestate-take-a-function-as-an-initial-value)                                                                                                                     |
+| 275 | [What types of values can useState hold?](#what-types-of-values-can-usestate-hold)                                                                                                                                         |
+| 276 | [Is ref argument available for all functions or class components?](#is-ref-argument-available-for-all-functions-or-class-components)                                                                                       |
 
 </details>
 
@@ -5692,7 +5697,9 @@ Technically it is possible to write nested function components but it is not sug
       - The console will only log "Filtering users..." when the search term updates.
 
 272.  ### Can Hooks be used in class components?
-           No, Hooks cannot be used inside class components. They are specially designed for function components. This is because hooks depend on the sequence in which they are called during a component’s render, something that's only guaranteed in functional components. However, both class and function components can coexist in the same application.
+
+      No, Hooks cannot be used inside class components. They are specially designed for function components. This is because hooks depend on the sequence in which they are called during a component’s render, something that's only guaranteed in functional components. However, both class and function components can coexist in the same application.
+
 273.  ### What is an updater function? Should an updater function be used in all cases?
 
       An **updater function** is a form of `setState` where you pass a **function** instead of a direct value. This function receives the **previous state** as an argument and returns the **next state**.
@@ -5774,36 +5781,39 @@ Technically it is possible to write nested function components but it is not sug
 
 276.  ### What happens if you call `useState` conditionally?
 
-      As per rules of React Hooks, hooks must be called unconditionally. For example, if you conditionally call it:
-      `js
-     if (someCondition) { 
-        const [state, setState] = useState(0); 
-     }
-     `
+            As per rules of React Hooks, hooks must be called unconditionally. For example, if you conditionally call it:
+            `js
 
-           React will throw a runtime error because it **relies on the order of Hook calls**, and conditional logic breaks that order.
+      if (someCondition) {
+      const [state, setState] = useState(0);
+      }
+      `
+
+                  React will throw a runtime error because it **relies on the order of Hook calls**, and conditional logic breaks that order.
 
 277.  ### Is useState Synchronous or Asynchronous?
-      The `useState` hook is synchronous, but state updates are asynchronous. When you call `useState()`, it runs synchronously and returns the state variable and setter function as tuple.
-      `js
-     const [count, setCount] = useState(0);
-     `
+
+                   The `useState` hook is synchronous, but state updates are asynchronous. When you call `useState()`, it runs synchronously and returns the state variable and setter function as tuple.
+                   `js
+             const [count, setCount] = useState(0);
+             `
+
       This happens immediately during rendering.
       However, the state update function (**`**setState**`**) is asynchronous in the sense that it doesn't update the state immediately.
       React **batches** updates and applies them before the next render. You won’t see the updated value immediately after calling `setState`.
       **Example:**
 
-````js
-const [count, setCount] = useState(0);
+      ````js
+      const [count, setCount] = useState(0);
 
-     function handleClick() {
-       setCount(count + 1);
-       console.log(count); // ❗️Still logs the old value
-     }
-     ```
-     The > `console.log(count)` prints the **old value**, because the update hasn’t happened yet.
+      function handleClick() {
+        setCount(count + 1);
+        console.log(count); // ❗️Still logs the old value
+      }
+      ```
+      The > `console.log(count)` prints the **old value**, because the update hasn’t happened yet.
 
-     To see the updated state value, you can use `useEffect()` hook. It runs **after the component has re-rendered.**  By the time `useEffect` runs:
+      To see the updated state value, you can use `useEffect()` hook. It runs **after the component has re-rendered.**  By the time `useEffect` runs:
 
         *   The component has been updated.
         *   The **state contains the new value**.
@@ -5827,7 +5837,7 @@ const [count, setCount] = useState(0);
         }
         ```
 
-
+      ````
 
 278.  ### Can you explain how useState works internally?
 
@@ -5906,27 +5916,25 @@ const [count, setCount] = useState(0);
       }
       ```
 
-
-
 ## Old Q&A
 
-1. ### Why should we not update the state directly?
+1.  ### Why should we not update the state directly?
 
-   If you try to update the state directly then it won't re-render the component.
+    If you try to update the state directly then it won't re-render the component.
 
-   ```javascript
-   //Wrong
-   this.state.message = "Hello world";
-````
+    ```javascript
+    //Wrong
+    this.state.message = "Hello world";
+    ```
 
-Instead use `setState()` method. It schedules an update to a component's state object. When state changes, the component responds by re-rendering.
+    Instead use `setState()` method. It schedules an update to a component's state object. When state changes, the component responds by re-rendering.
 
-```javascript
-//Correct
-this.setState({ message: "Hello World" });
-```
+    ```javascript
+    //Correct
+    this.setState({ message: "Hello World" });
+    ```
 
-**Note:** You can directly assign to the state object either in _constructor_ or using latest javascript's class field declaration syntax.
+    **Note:** You can directly assign to the state object either in _constructor_ or using latest javascript's class field declaration syntax.
 
 2.  ### What is the purpose of callback function as an argument of `setState()`?
 
@@ -6133,23 +6141,21 @@ this.setState({ message: "Hello World" });
     3. They _don't work with static analysis_ like Flow. Flow can't guess the magic that framework does to make the string ref appear on `this.refs`, as well as its type (which could be different). Callback refs are friendlier to static analysis.
     4. It doesn't work as most people would expect with the "render callback" pattern (e.g. <DataGrid renderRow={this.renderRow} />)
 
-       ```jsx harmony
-       class MyComponent extends Component {
-         renderRow = (index) => {
-           // This won't work. Ref will get attached to DataTable rather than MyComponent:
-           return <input ref={"input-" + index} />;
+    ```jsx harmony
+    class MyComponent extends Component {
+      renderRow = (index) => {
+        // This won't work. Ref will get attached to DataTable rather than MyComponent:
+        return <input ref={"input-" + index} />;
 
-           // This would work though! Callback refs are awesome.
-           return <input ref={(input) => (this["input-" + index] = input)} />;
-         };
+        // This would work though! Callback refs are awesome.
+        return <input ref={(input) => (this["input-" + index] = input)} />;
+      };
 
-         render() {
-           return (
-             <DataTable data={this.props.data} renderRow={this.renderRow} />
-           );
-         }
-       }
-       ```
+      render() {
+        return <DataTable data={this.props.data} renderRow={this.renderRow} />;
+      }
+    }
+    ```
 
 10. ### What are the different phases of component lifecycle?
 
